@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { timingSafeEqual } from 'crypto';
 
 @Component({
   selector: 'app-invoice-list',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./invoice-list.component.scss']
 })
 export class InvoiceListComponent implements OnInit {
+  form: FormGroup
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+  }
+
+
+  createForm() {
+    this.form = this.formBuilder.group({
+      
+    })
   }
 
 }
