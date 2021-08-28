@@ -7,4 +7,21 @@ import { Injectable } from '@angular/core';
 export class InvoiceService {
 
   constructor(private httpClient: HttpClient) { }
+
+
+  getById(){
+
+  }
+
+  getAll() {
+
+  }
+
+  create(){
+
+  }
+
+  edit() {
+    
+  }
 }
