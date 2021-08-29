@@ -1,25 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { timingSafeEqual } from 'crypto';
-
+import { Component, OnInit } from "@angular/core";
 @Component({
-  selector: 'app-invoice-list',
-  templateUrl: './invoice-list.component.html',
-  styleUrls: ['./invoice-list.component.scss']
+  selector: "app-invoice-list",
+  templateUrl: "./invoice-list.component.html",
+  styleUrls: ["./invoice-list.component.scss"],
 })
 export class InvoiceListComponent implements OnInit {
-  form: FormGroup
+  displayedColumns: string[] = [
+    "invoiceNumber",
+    "serie",
+    "ncm_sh",
+    "cfop",
+    "qtd",
+    "natureOfOperation",
+    "unit",
+    "freight",
+    "value_unit",
+    "product",
+    "client",
+  ];
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
-
-  createForm() {
-    this.form = this.formBuilder.group({
-      
-    })
-  }
-
+  ngOnInit() {}
 }
