@@ -9,7 +9,7 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class InvoiceListComponent implements OnInit {
   displayedColumns: string[] = [
-    "invoiceNumber",
+    "invoice_number",
     "serie",
     "ncm_sh",
     "cfop",
