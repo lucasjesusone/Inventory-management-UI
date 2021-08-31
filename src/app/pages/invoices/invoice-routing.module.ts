@@ -30,6 +30,9 @@ const routes: Routes =
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class InvoiceRoutingModule { }
-export const invoiceRoutedModules = [
-];
+export class InvoiceRoutingModule {
+    static components = [
+        InvoiceListComponent,
+        InvoiceItemComponent
+    ]
+};

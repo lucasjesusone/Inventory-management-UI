@@ -1,11 +1,20 @@
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MatTableModule } from "@angular/material/table";
+import { MatPaginatorModule } from "@angular/material/paginator";
+import { InvoiceRoutingModule } from "./invoice-routing.module";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
-import { MatPaginatorModule } from "@angular/material";
-import { MatTableModule } from "@angular/material/table";
+import { NbIconModule } from "@nebular/theme";
 
 @NgModule({
-  declarations: [],
-  imports: [CommonModule, NgbModule, MatTableModule, MatPaginatorModule],
+  imports: [
+    CommonModule,
+    NgbModule,
+    MatTableModule,
+    MatPaginatorModule,
+    InvoiceRoutingModule,
+    NbIconModule,
+  ],
+  declarations: [InvoiceRoutingModule.components],
 })
 export class InvoiceModule {}
