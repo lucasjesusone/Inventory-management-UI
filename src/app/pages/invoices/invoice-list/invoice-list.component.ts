@@ -1,4 +1,7 @@
+import { InvoiceModel } from './../invoice.model';
+import { InvoiceService } from './../invoice.service';
 import { Component, OnInit } from "@angular/core";
+import { MatTableDataSource } from '@angular/material/table';
 @Component({
   selector: "app-invoice-list",
   templateUrl: "./invoice-list.component.html",
@@ -19,7 +22,23 @@ export class InvoiceListComponent implements OnInit {
     "client",
   ];
 
-  constructor() {}
+  dataSource: InvoiceModel[]
 
-  ngOnInit() {}
+  invoices: InvoiceModel[] = []
+
+  constructor(private service: InvoiceService) {}
+
+  ngOnInit() {
+
+    this.getAllInvoices()
+  }
+
+
+  getAllInvoices() {
+    this.service.getAll().subscribe(res => {
+      this.invoices = res
+      this.dataSource = res
+      console.log(res)
+    })
+  }
 }
