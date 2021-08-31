@@ -33,6 +33,7 @@
     "@ngrx/store": "^10.1.2",
     "@ngrx/store-devtools": "^10.1.2",
     "@swimlane/ngx-charts": "^17.0.0",
+    "@tinymce/tinymce-angular": "^4.2.4",
     "@types/moment-timezone": "0.5.9",
     "angular-dual-listbox": "^5.0.1",
     "angular2-chartjs": "0.4.1",

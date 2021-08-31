@@ -53,12 +53,18 @@
 
   <ng-container matColumnDef="product">
     <th mat-header-cell *matHeaderCellDef>Produto</th>
-    <td mat-cell *matCellDef="let element">{{ element.product }}</td>
+    <td mat-cell *matCellDef="let element">{{ element.product.product_name }}</td>
   </ng-container>
 
   <ng-container matColumnDef="client">
     <th mat-header-cell *matHeaderCellDef>Cliente</th>
-    <td mat-cell *matCellDef="let element">{{ element.client }}</td>
+    <td mat-cell *matCellDef="let element">{{ element.client.razaoSocial }}</td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="issueDate">
+    <th mat-header-cell *matHeaderCellDef>Data da Emissão</th>
+    <td mat-cell *matCellDef="let element">{{ element.issueDate | date: 'dd/MM/yyyy'}}</td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

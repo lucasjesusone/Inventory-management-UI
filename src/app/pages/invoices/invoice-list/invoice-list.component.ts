@@ -20,6 +20,7 @@ export class InvoiceListComponent implements OnInit {
     "value_unit",
     "product",
     "client",
+    "issueDate"
   ];
 
   dataSource: InvoiceModel[]

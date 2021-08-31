@@ -11,15 +11,15 @@ export class PagesComponent {
 
   constructor() {
     this.menu = [
-       {
-           title: 'Notas Fiscais',
-           children: [
-               {
-                title: 'Notas Fiscais',
-                link: '/pages/invoice/list'
-               }
-           ]
-       }
+      {
+        title: "Notas Fiscais",
+        children: [
+          {
+            title: "Notas Fiscais",
+            link: "/pages/invoice/list",
+          },
+        ],
+      },
     ];
   }
 }
