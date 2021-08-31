@@ -1,20 +1,32 @@
-import { HttpClient } from '@angular/common/http';
+import { environment } from './../../../environments/environment';
+import { InvoiceModel } from './invoice.model';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST,OPTIONS,DELETE,PUT',
+  }),
+};
 @Injectable({
   providedIn: 'root'
 })
 export class InvoiceService {
-
-  constructor(private httpClient: HttpClient) { }
+  private baseUrlService: string;
+  constructor(private httpClient: HttpClient) {
+    this.baseUrlService = environment.api
+   }
 
 
   getById(){
 
   }
 
-  getAll() {
-
+  getAll(): Observable<InvoiceModel[]> {
+    return this.httpClient.get<InvoiceModel[]>(`${this.baseUrlService + '/getAll'}`, httpOptions);
   }
 
   create(){
@@ -22,6 +34,6 @@ export class InvoiceService {
   }
 
   edit() {
-    
+
   }
 }
