@@ -1,2 +1,2 @@
-export interface Client.Model {
+export class ClientModel {
 }
