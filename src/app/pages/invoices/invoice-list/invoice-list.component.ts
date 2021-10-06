@@ -2,6 +2,7 @@ import { InvoiceModel } from './../invoice.model';
 import { InvoiceService } from './../invoice.service';
 import { Component, OnInit } from "@angular/core";
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 @Component({
   selector: "app-invoice-list",
   templateUrl: "./invoice-list.component.html",
@@ -20,14 +21,15 @@ export class InvoiceListComponent implements OnInit {
     "value_unit",
     "product",
     "client",
-    "issueDate"
+    "issueDate",
+    "acoes"
   ];
 
   dataSource: InvoiceModel[]
 
   invoices: InvoiceModel[] = []
 
-  constructor(private service: InvoiceService) {}
+  constructor(private service: InvoiceService, private router: Router) {}
 
   ngOnInit() {
 
@@ -39,7 +41,12 @@ export class InvoiceListComponent implements OnInit {
     this.service.getAll().subscribe(res => {
       this.invoices = res
       this.dataSource = res
-      console.log(res)
     })
+  }
+
+
+
+  goToNew() {
+    this.router.navigate(['/pages/invoice/new'])
   }
 }

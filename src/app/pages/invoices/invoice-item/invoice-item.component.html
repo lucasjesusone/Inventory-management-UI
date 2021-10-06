@@ -1,1 +1,32 @@
-<p>invoice-item works!</p>
+<mat-card class="inline-form-card" [formGroup]="form">
+  <mat-form-field appearance="fill">
+    <mat-label>Unidade Tipo</mat-label>
+    <mat-select id="unit" formControlName="unit">
+      <mat-option
+        *ngFor="let unitType of unitType | keyvalue"
+        [value]="unitType.key"
+        >{{ unitType.value }}</mat-option
+      >
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="ml-2">
+    <mat-label>Tipo de Frete</mat-label>
+    <mat-select id="freight" formControlName="freight">
+      <mat-option
+        *ngFor="let freight of freight | keyvalue"
+        [value]="freight.key"
+        >{{ freight.value }}</mat-option
+      >
+    </mat-select>
+  </mat-form-field>
+
+  <div class="button-row">
+    <button mat-raised-button color="primary" (click)="returnToList()">
+      Voltar
+    </button>
+    <button mat-raised-button color="primary">
+      Salvar 
+    </button>
+  </div>
+</mat-card>
