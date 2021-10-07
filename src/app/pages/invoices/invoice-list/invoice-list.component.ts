@@ -1,8 +1,8 @@
-import { InvoiceModel } from './../invoice.model';
-import { InvoiceService } from './../invoice.service';
+import { InvoiceModel } from "./../invoice.model";
+import { InvoiceService } from "./../invoice.service";
 import { Component, OnInit } from "@angular/core";
-import { MatTableDataSource } from '@angular/material/table';
-import { Router } from '@angular/router';
+import { MatTableDataSource } from "@angular/material/table";
+import { Router } from "@angular/router";
 @Component({
   selector: "app-invoice-list",
   templateUrl: "./invoice-list.component.html",
@@ -22,31 +22,27 @@ export class InvoiceListComponent implements OnInit {
     "product",
     "client",
     "issueDate",
-    "acoes"
+    "acoes",
   ];
 
-  dataSource: InvoiceModel[]
+  dataSource: InvoiceModel[];
 
-  invoices: InvoiceModel[] = []
+  invoices: InvoiceModel[] = [];
 
   constructor(private service: InvoiceService, private router: Router) {}
 
   ngOnInit() {
-
-    this.getAllInvoices()
+    this.getAllInvoices();
   }
-
 
   getAllInvoices() {
-    this.service.getAll().subscribe(res => {
-      this.invoices = res
-      this.dataSource = res
-    })
+    this.service.getAll().subscribe((res) => {
+      this.invoices = res;
+      this.dataSource = res;
+    });
   }
 
-
-
   goToNew() {
-    this.router.navigate(['/pages/invoice/new'])
+    this.router.navigate(["/pages/invoice/new"]);
   }
 }
