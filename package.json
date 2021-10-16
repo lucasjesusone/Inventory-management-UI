@@ -13,7 +13,7 @@
   "dependencies": {
     "@agm/core": "^1.1.0",
     "@angular/animations": "^10.0.10",
-    "@angular/cdk": "10.2.7",
+    "@angular/cdk": "^10.2.1",
     "@angular/common": "^10.0.10",
     "@angular/compiler": "^10.0.10",
     "@angular/core": "^10.0.10",
@@ -87,6 +87,7 @@
     "@angular/language-service": "10.0.10",
     "@compodoc/compodoc": "^1.1.11",
     "@fortawesome/fontawesome-free": "^5.2.0",
+    "@schematics/angular": "^10.0.6",
     "@types/d3-color": "1.0.5",
     "@types/googlemaps": "^3.39.12",
     "@types/jasmine": "2.5.54",

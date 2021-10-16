@@ -4,7 +4,12 @@ import { NbMenuItem } from "@nebular/theme";
 @Component({
   selector: "ngx-pages",
   styleUrls: ["pages.component.scss"],
-  template: ` <router-outlet></router-outlet> `,
+  template: `
+    <ngx-one-column-layout>
+      <nb-menu [items]="menu"></nb-menu>
+      <router-outlet></router-outlet>
+    </ngx-one-column-layout>
+  `,
 })
 export class PagesComponent {
   menu: NbMenuItem[];
@@ -12,11 +17,15 @@ export class PagesComponent {
   constructor() {
     this.menu = [
       {
-        title: "Notas Fiscais",
+        title: "Serviços",
         children: [
           {
             title: "Notas Fiscais",
             link: "/pages/invoice/list",
+          },
+          {
+            title: "Produtos",
+            link: "/pages/product/list",
           },
         ],
       },
