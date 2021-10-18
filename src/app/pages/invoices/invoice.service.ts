@@ -26,7 +26,7 @@ export class InvoiceService {
   }
 
   getAll(): Observable<InvoiceModel[]> {
-    return this.httpClient.get<InvoiceModel[]>(`${this.baseUrlService + '/getAll'}`, httpOptions);
+    return this.httpClient.get<InvoiceModel[]>(`${this.baseUrlService + '/invoice/getAll'}`, httpOptions);
   }
 
   create(){

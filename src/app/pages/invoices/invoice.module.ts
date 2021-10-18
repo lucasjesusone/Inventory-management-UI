@@ -4,7 +4,7 @@ import { MatPaginatorModule } from "@angular/material/paginator";
 import { InvoiceRoutingModule } from "./invoice-routing.module";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { NbIconModule, NbTooltipModule } from "@nebular/theme";
+import { NbButtonModule, NbCardModule, NbIconModule, NbTooltipModule } from "@nebular/theme";
 import { MatCardModule } from "@angular/material/card";
 import { NbEvaIconsModule } from "@nebular/eva-icons";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
@@ -20,6 +20,8 @@ import { MatInputModule } from "@angular/material/input";
     MatTableModule,
     MatPaginatorModule,
     InvoiceRoutingModule,
+    NbButtonModule,
+    NbTooltipModule,
     NbIconModule,
     MatCardModule,
     FormsModule,
@@ -29,6 +31,7 @@ import { MatInputModule } from "@angular/material/input";
     MatSelectModule,
     MatButtonModule,
     MatInputModule,
+    NbCardModule
   ],
   declarations: [InvoiceRoutingModule.components],
 })
