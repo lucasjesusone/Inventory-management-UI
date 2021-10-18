@@ -9,7 +9,7 @@ const routes: Routes =
   [{
     path: 'list',
     component: ProductListComponent,
-    data: { title: 'Lista de Notas Fiscais', endPoint: 'product' }
+    data: { title: 'Lista de Produtos', endPoint: 'product' }
   },
   {
     path: 'new',

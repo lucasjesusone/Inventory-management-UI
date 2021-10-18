@@ -1,1 +1,91 @@
-<p>product-list works!</p>
+<nb-card>
+  <nb-card-header>
+    <nb-icon icon="filter" pack="fas"></nb-icon> {{title}}
+  </nb-card-header>
+  <nb-card-body>
+    <div>
+      <div class="row">
+        <br />
+        <div class="row ml-md-0">
+          <button nbButton status="primary" class="mr-1">Pesquisar</button>
+          <button nbButton status="primary" class="mr-1">Limpar</button>
+          <button status="primary" nbButton hero>Incluir</button>
+        </div>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>
+
+<mat-card>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="product_id">
+      <th mat-header-cell *matHeaderCellDef>Código do Produto</th>
+      <td mat-cell *matCellDef="let element">{{ element.product_id }}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="product_name">
+      <th mat-header-cell *matHeaderCellDef>Nome do Produto</th>
+      <td mat-cell *matCellDef="let element">{{ element.product_name }}</td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="createdAt">
+      <th mat-header-cell *matHeaderCellDef>Data da Criação</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.createdAt | date: "dd/MM/yyyy" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="acoes">
+      <th class="text-center" mat-header-cell *matHeaderCellDef>Ações</th>
+      <td
+        mat-cell
+        *matCellDef="let element"
+        class="text-center"
+        style="width: 200px !important"
+      >
+        <button
+          nbButton
+          status="primary"
+          size="small"
+          nbTooltip="Visualizar"
+          style="margin-right: 5px"
+        >
+          <nb-icon
+            icon="eye-outline"
+            status="basic"
+            style="color: #fff"
+          ></nb-icon>
+        </button>
+        <button
+          nbButton
+          status="primary"
+          size="small"
+          nbTooltip="Editar"
+          style="margin-right: 5px"
+        >
+          <nb-icon
+            icon="edit-2-outline"
+            status="basic"
+            style="color: #fff"
+          ></nb-icon>
+        </button>
+        <button nbButton status="primary" size="small" nbTooltip="Excluir Item">
+          <nb-icon
+            icon="trash-2-outline"
+            status="basic"
+            style="color: #fff"
+          ></nb-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</mat-card>

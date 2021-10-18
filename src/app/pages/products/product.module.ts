@@ -3,7 +3,12 @@ import { MatTableModule } from "@angular/material/table";
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { NbIconModule, NbTooltipModule } from "@nebular/theme";
+import {
+  NbButtonModule,
+  NbCardModule,
+  NbIconModule,
+  NbTooltipModule,
+} from "@nebular/theme";
 import { MatCardModule } from "@angular/material/card";
 import { NbEvaIconsModule } from "@nebular/eva-icons";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
@@ -20,7 +25,10 @@ import { ProductRoutingModule } from "./product-routing.module";
     MatTableModule,
     MatPaginatorModule,
     ProductRoutingModule,
+    NbButtonModule,
+    NbTooltipModule,
     NbIconModule,
+    NbEvaIconsModule,
     MatCardModule,
     FormsModule,
     ReactiveFormsModule,
@@ -29,6 +37,7 @@ import { ProductRoutingModule } from "./product-routing.module";
     MatSelectModule,
     MatButtonModule,
     MatInputModule,
+    NbCardModule,
   ],
   declarations: [ProductRoutingModule.components],
 })
