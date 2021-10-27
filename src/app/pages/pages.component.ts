@@ -16,7 +16,7 @@ export class PagesComponent {
 
   constructor() {
     this.menu = [
-      {
+      { 
         title: "Serviços",
         children: [
           {
@@ -26,6 +26,14 @@ export class PagesComponent {
           {
             title: "Produtos",
             link: "/pages/product/list",
+          },
+          {
+            title: "Usuários",
+            link: "/pages/user/list",
+          },
+          {
+            title: "Clientes",
+            link: "/pages/client/list",
           },
         ],
       },

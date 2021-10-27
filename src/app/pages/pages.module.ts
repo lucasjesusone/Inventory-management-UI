@@ -3,6 +3,8 @@ import { PagesRoutingModule } from "./pages-routing.module";
 import { Injector, NgModule } from "@angular/core";
 import { NbMenuItem, NbMenuModule } from "@nebular/theme";
 import { ThemeModule } from "../@theme/theme.module";
+import { UserListComponent } from './users/user-list/user-list.component';
+import { UserItemComponent } from './users/user-item/user-item.component';
 
 @NgModule({
   imports: [
