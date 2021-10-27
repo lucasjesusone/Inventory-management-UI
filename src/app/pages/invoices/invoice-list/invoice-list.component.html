@@ -7,7 +7,14 @@
       <div class="row">
         <br />
         <div class="row ml-md-0">
-          <button nbButton status="primary" class="mr-1">Pesquisar</button>
+          <button
+            nbButton
+            status="primary"
+            class="mr-1"
+            (click)="getAllInvoices()"
+          >
+            Pesquisar
+          </button>
           <button nbButton status="primary" class="mr-1">Limpar</button>
           <button status="primary" nbButton hero>Incluir</button>
         </div>
@@ -106,7 +113,7 @@
           nbButton
           status="primary"
           size="small"
-          (click)="goToNew()"
+          (click)="view(element.invoice_id)"
           nbTooltip="Visualizar"
           style="margin-right: 5px"
         >
@@ -117,6 +124,7 @@
           ></nb-icon>
         </button>
         <button
+          (click)="edit(element.invoice_id)"
           nbButton
           status="primary"
           size="small"

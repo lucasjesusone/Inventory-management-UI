@@ -1,7 +1,7 @@
 import { unitType, Freight } from "./../../../shared/enums/enum";
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: "app-invoice-item",
@@ -12,10 +12,11 @@ export class InvoiceItemComponent implements OnInit {
   form: FormGroup;
   unitType = unitType;
   freight = Freight;
-
-  constructor(private formBuilder: FormBuilder, private router: Router) {}
+  invoice_id: number
+  constructor(private formBuilder: FormBuilder, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
+    this.invoice_id = this.activatedRoute.snapshot.params["invoice_id"];
     this.createForm();
   }
 

@@ -16,12 +16,12 @@ const routes: Routes =
     data: { title: 'Nova Nota Fiscal', endPoint: 'invoice' }
   },
   {
-    path: 'view/:id',
+    path: 'view/:invoice_id',
     component: InvoiceItemComponent,
     data: { title: 'Visualizar Nota Fiscal', endPoint: 'invoice' }
   },
   {
-    path: 'edit/:id',
+    path: 'edit/:invoice_id',
     component: InvoiceItemComponent,
     data: { title: 'Editar Nota Fiscal', endPoint: 'invoice' }
   }];

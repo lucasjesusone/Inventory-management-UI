@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from "@angular/router";
   styleUrls: ["./invoice-list.component.scss"],
 })
 export class InvoiceListComponent implements OnInit {
-  title: string
+  title: string;
   displayedColumns: string[] = [
     "invoice_number",
     "serie",
@@ -29,14 +29,20 @@ export class InvoiceListComponent implements OnInit {
   dataSource: InvoiceModel[];
 
   invoices: InvoiceModel[] = [];
+  private endPoint: string;
 
-  constructor(private service: InvoiceService, private router: Router, public activatedRoute?: ActivatedRoute) {}
+  constructor(
+    private service: InvoiceService,
+    private router: Router,
+    public activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     this.getAllInvoices();
 
     this.activatedRoute.data.subscribe((data) => {
       this.title = data.title;
+      this.endPoint = data.endPoint;
     });
   }
 
@@ -44,7 +50,16 @@ export class InvoiceListComponent implements OnInit {
     this.service.getAll().subscribe((res) => {
       this.invoices = res;
       this.dataSource = res;
+      console.log(res);
     });
+  }
+
+  edit(invoice_id: number): void {
+    this.router.navigate(["/pages/invoice/edit/" + invoice_id]);
+  }
+
+  view(invoice_id: number): void {
+    this.router.navigate(["/pages/invoice/view/" + invoice_id]);
   }
 
   goToNew() {

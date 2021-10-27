@@ -21,19 +21,21 @@ export class InvoiceService {
    }
 
 
-  getById(){
-
-  }
-
   getAll(): Observable<InvoiceModel[]> {
     return this.httpClient.get<InvoiceModel[]>(`${this.baseUrlService + '/invoice/getAll'}`, httpOptions);
   }
 
-  create(){
-
+  view(invoice_id: number): Observable<InvoiceModel> {
+    return this.httpClient.get<InvoiceModel>(this.baseUrlService + invoice_id)
   }
 
-  edit() {
 
+  delete(invoice_id: number): Observable<void>{
+    return this.httpClient.delete<void>(this.baseUrlService + invoice_id)
+  }
+
+
+  edit(invoice: InvoiceModel): Observable<InvoiceModel> {
+    return this.httpClient.put<InvoiceModel>(this.baseUrlService + invoice.invoice_id, invoice)
   }
 }
