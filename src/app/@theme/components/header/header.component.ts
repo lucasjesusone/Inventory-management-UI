@@ -53,20 +53,22 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     // this.permissionsService.permissions$.subscribe((permissions) => {
-    //   this.userMenu = [
-    //     { icon: 'person-outline', title: 'Usuário', link: '/pages/user/list', hidden: permissions["ROLE_ADMIN"] == null && permissions["ROLE_USERS"] == null },
-    //     { icon: 'shield-outline', title: 'Perfil', link: '/pages/profile/list', hidden: permissions["ROLE_ADMIN"] == null && permissions["ROLE_PROFILE"] == null },
-    //     { icon: 'smartphone-outline', title: 'Aparelhos', link: '/pages/device/list', hidden: permissions["ROLE_ADMIN"] == null && permissions["ROLE_DEVICE"] == null },
-    //     { icon: 'flip-2-outline', title: 'Trocar Senha', link: '/pages/change-password'},
-    //     { icon: 'menu-outline', title: 'Licença' },
-    //     { icon: 'log-out-outline', title: 'Log out' }];
-    // })
+      this.userMenu = [
+        { icon: 'person-outline', title: 'Usuário', link: '/pages/user/list',},
+        { icon: 'shield-outline', title: 'Perfil', link: '/pages/profile/list',},
+        { icon: 'smartphone-outline', title: 'Aparelhos', link: '/pages/device/list'},
+        { icon: 'flip-2-outline', title: 'Trocar Senha', link: '/pages/change-password'},
+        { icon: 'menu-outline', title: 'Licença' },
+        { icon: 'log-out-outline', title: 'Log out' }
+      ];
+  // }
+  // )
 
-    // this.nbMenuService.onItemClick()
-    //   .pipe(filter(({ tag }) => tag === 'context-menu'), map(({ item: { title } }) => title))
-    //   .subscribe(title => {
-    //     this.selectMenu(title);
-    //   });
+    this.nbMenuService.onItemClick()
+      .pipe(filter(({ tag }) => tag === 'context-menu'), map(({ item: { title } }) => title))
+      .subscribe(title => {
+        // this.selectMenu(title);
+      });
 
     const { xl } = this.breakpointService.getBreakpointsMap();
 
