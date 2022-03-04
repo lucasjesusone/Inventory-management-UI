@@ -12,11 +12,11 @@ export class InvoiceItemComponent implements OnInit {
   form: FormGroup;
   unitType = unitType;
   freight = Freight;
-  invoice_id: number
+  invoiceId: number
   constructor(private formBuilder: FormBuilder, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
-    this.invoice_id = this.activatedRoute.snapshot.params["invoice_id"];
+    this.invoiceId = this.activatedRoute.snapshot.params["invoiceId"];
     this.createForm();
   }
 

@@ -11,18 +11,12 @@ import { ActivatedRoute, Router } from "@angular/router";
 export class InvoiceListComponent implements OnInit {
   title: string;
   displayedColumns: string[] = [
-    "invoice_number",
-    "serie",
-    // "ncm_sh",
-    // "cfop",
-    // "qtd",
-    "natureOfOperation",
-    "unit",
-    "freight",
-    "value_unit",
-    // "product",
-    "client",
-    "issueDate",
+    "invoiceId",
+    "invoiceNumber",
+    "recipientCorporateName",
+    "issuanceDate",
+    // "remetenteIE",
+    // "destinatarioIE",
     "acoes",
   ];
 
@@ -54,15 +48,15 @@ export class InvoiceListComponent implements OnInit {
     });
   }
 
-  edit(invoice_id: number): void {
-    this.router.navigate(["/pages/invoice/edit/" + invoice_id]);
+  edit(invoiceId: number): void {
+    this.router.navigate(["/pages/invoice/edit/" + invoiceId]);
   }
 
-  view(invoice_id: number): void {
-    this.router.navigate(["/pages/invoice/view/" + invoice_id]);
+  view(invoiceId: number): void {
+    this.router.navigate(["/pages/invoice/view/" + invoiceId]);
   }
 
-  goToNew() {
+  new() {
     this.router.navigate(["/pages/invoice/new"]);
   }
 }

@@ -17,16 +17,8 @@ export class PagesComponent {
   constructor() {
     this.menu = [
       { 
-        title: "Serviços",
+        title: "Login",
         children: [
-          {
-            title: "Notas Fiscais",
-            link: "/pages/invoice/list",
-          },
-          {
-            title: "Produtos",
-            link: "/pages/product/list",
-          },
           {
             title: "Usuários",
             link: "/pages/user/list",
@@ -35,8 +27,55 @@ export class PagesComponent {
             title: "Clientes",
             link: "/pages/client/list",
           },
+          {
+            title: "Funcionários",
+            link: "/pages/client/list",
+          },
         ],
       },
+      {
+        title: "Notas Fiscais",
+        children: [
+          {
+            title: "Nota Fiscal Eletrônica",
+            link: "/pages/invoice/list",
+          },
+          {
+            title: "Nota Fiscal de Serviço",
+            link: "/pages/product/list",
+          },
+        ],
+      },
+      {
+        title: "Controle",
+        children: [
+          {
+            title: "Controle de Despesas",
+            link: "/pages/product/list"
+          },
+          {
+            title: "Controle de Contas a Pagar",
+            link: "/pages/product/list"
+          },
+          {
+            title: "Controle de Cheques",
+            link: "/pages/product/list"
+          }
+        ]
+      },
+      {
+        title: "Estoque",
+        children: [
+          {
+            title: "Produtos",
+            link: "/pages/product/list"
+          },
+          {
+            title: "Vendas / Orçamentos",
+            link: "/pages/product/list"
+          },
+        ]
+      }
     ];
   }
 }
