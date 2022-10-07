@@ -1,0 +1,75 @@
+<form [formGroup]="form">
+    <mat-card class="inline-form-card">
+      <div>
+        <!-- <mat-form-field appearance="fill">
+          <mat-label>Unidade Tipo</mat-label>
+          <mat-select id="unit" formControlName="unit">
+            <mat-option
+              *ngFor="let unitType of unitType | keyvalue"
+              [value]="unitType.key"
+              >{{ unitType.value }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field> -->
+  
+        <!-- <mat-form-field appearance="fill" class="ml-2">
+          <mat-label>Tipo de Frete</mat-label>
+          <mat-select id="freight" formControlName="freight">
+            <mat-option
+              *ngFor="let freight of freight | keyvalue"
+              [value]="freight.key"
+              >{{ freight.value }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field> -->
+      </div>
+  
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Série da NF</mat-label>
+          <input matInput formControlName="serie" />
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill" class="ml-2">
+          <mat-label>NCM</mat-label>
+          <input matInput formControlName="ncm_sh" />
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill" class="ml-2">
+          <mat-label>Código do Produto</mat-label>
+          <input matInput formControlName="product_code" />
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill" class="ml-2">
+          <mat-label>Número da NF</mat-label>
+          <input matInput formControlName="invoice_number" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>CST</mat-label>
+          <input matInput formControlName="cst" />
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill" class="ml-2">
+          <mat-label>CFOP</mat-label>
+          <input matInput formControlName="cfop" />
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill" class="ml-2">
+          <mat-label>Natureza da Operação</mat-label>
+          <input matInput formControlName="natureOfOperation" />
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill" class="ml-2">
+          <mat-label>Valor Unitário</mat-label>
+          <input matInput formControlName="value_unit" />
+        </mat-form-field>
+      </div>
+      <div class="button-row">
+        <!-- <button status="primary" nbButton hero (click)="returnToList()" class="mr-1">Voltar</button> -->
+        <button status="primary" nbButton hero >Salvar</button>
+      </div>
+    </mat-card>
+  </form>
+  
