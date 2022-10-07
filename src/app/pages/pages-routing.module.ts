@@ -15,17 +15,17 @@ const routes: Routes = [
       {
         path: "product",
         loadChildren: () =>
-          import("./products/product.module").then((m) => m.ProductModule),
+          import("./stock/products/product.module").then((m) => m.ProductModule),
       },
       {
         path: "user",
         loadChildren: () =>
-          import("./users/user.module").then((m) => m.UserModule),
+          import("./people-management/users/user.module").then((m) => m.UserModule),
       },
       {
         path: "client",
         loadChildren: () =>
-          import("./clients/client.module").then((m) => m.ClientModule),
+          import("./people-management/clients/client.module").then((m) => m.ClientModule),
       },
     ],
   },

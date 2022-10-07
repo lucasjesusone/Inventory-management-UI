@@ -6,7 +6,7 @@ import { environment } from "src/environments/environment";
   styleUrls: ["./footer.component.scss"],
   template: `
     <span class="created-by"
-      >Copyright © Lucas 2021 - Todos os direitos reservados
+      >Copyright © Turin Gestão Empresarial 2022 - All Rights Reserved
     </span>
     <div>Versão: {{ version }}</div>
   `,

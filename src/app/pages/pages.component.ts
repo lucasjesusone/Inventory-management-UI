@@ -17,7 +17,7 @@ export class PagesComponent {
   constructor() {
     this.menu = [
       { 
-        title: "Login",
+        title: "Gestão de Pessoa",
         children: [
           {
             title: "Usuários",
@@ -28,37 +28,45 @@ export class PagesComponent {
             link: "/pages/client/list",
           },
           {
+            title: "Fornecedores",
+            link: "/pages/client/list",
+          },
+          {
             title: "Funcionários",
             link: "/pages/client/list",
           },
         ],
       },
+      // {
+      //   title: "Notas Fiscais",
+      //   children: [
+      //     {
+      //       title: "Nota Fiscal Eletrônica",
+      //       link: "/pages/invoice/list",
+      //     },
+      //     {
+      //       title: "Nota Fiscal de Serviço",
+      //       link: "/pages/product/list",
+      //     },
+      //   ],
+      // },
       {
-        title: "Notas Fiscais",
+        title: "Controle Financeiro",
         children: [
           {
-            title: "Nota Fiscal Eletrônica",
-            link: "/pages/invoice/list",
-          },
-          {
-            title: "Nota Fiscal de Serviço",
-            link: "/pages/product/list",
-          },
-        ],
-      },
-      {
-        title: "Controle",
-        children: [
-          {
-            title: "Controle de Despesas",
+            title: "Caixa",
             link: "/pages/product/list"
           },
+          // {
+          //   title: "Controle de Despesas",
+          //   link: "/pages/product/list"
+          // },
           {
             title: "Controle de Contas a Pagar",
             link: "/pages/product/list"
           },
           {
-            title: "Controle de Cheques",
+            title: "Controle de Contas a Receber",
             link: "/pages/product/list"
           }
         ]
@@ -71,7 +79,24 @@ export class PagesComponent {
             link: "/pages/product/list"
           },
           {
+            title: "Entradas",
+            link: "/pages/product/list"
+          },
+          {
             title: "Vendas / Orçamentos",
+            link: "/pages/product/list"
+          },
+        ]
+      },
+      {
+        title: "Logística",
+        children: [
+          {
+            title: "Veiculo",
+            link: "/pages/product/list"
+          },
+          {
+            title: "Deslocamento",
             link: "/pages/product/list"
           },
         ]

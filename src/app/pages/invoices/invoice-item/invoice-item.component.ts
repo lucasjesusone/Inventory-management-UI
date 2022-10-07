@@ -13,7 +13,7 @@ export class InvoiceItemComponent implements OnInit {
   unitType = unitType;
   freight = Freight;
   invoiceId: number
-  constructor(private formBuilder: FormBuilder, private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private fb: FormBuilder, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.invoiceId = this.activatedRoute.snapshot.params["invoiceId"];
@@ -21,7 +21,7 @@ export class InvoiceItemComponent implements OnInit {
   }
 
   createForm() {
-    this.form = this.formBuilder.group({
+    this.form = this.fb.group({
       serie: [null],
       ncm_sh: [null],
       product_code: [null],
